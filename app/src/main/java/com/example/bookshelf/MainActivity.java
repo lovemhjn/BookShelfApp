@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity implements BookListFragment.
 
     EditText searchEditText;
 
-    private final String SEARCH_API = "https://kamorris.com/lab/abp/booksearch.php?search=";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements BookListFragment.
         A Volloy JSONArrayRequest will automatically convert a JSON Array response from
         a web server to an Android JSONArray object
          */
+        String SEARCH_API = "https://kamorris.com/lab/abp/booksearch.php?search=";
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(SEARCH_API + searchString, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {

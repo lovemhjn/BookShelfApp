@@ -13,10 +13,10 @@ import java.util.HashMap;
 
 public class BooksAdapter extends BaseAdapter {
 
-    Context context;
-    ArrayList<Book> books;
+    private Context context;
+    private ArrayList books;
 
-    public BooksAdapter (Context context, ArrayList books) {
+    BooksAdapter(Context context, ArrayList books) {
         this.context = context;
         this.books = books;
     }

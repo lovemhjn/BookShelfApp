@@ -26,7 +26,7 @@ public class BookListFragment extends Fragment {
 
     public BookListFragment() {}
 
-    public static BookListFragment newInstance(ArrayList<Book> books) {
+    static BookListFragment newInstance(ArrayList<Book> books) {
         BookListFragment fragment = new BookListFragment();
         Bundle args = new Bundle();
 
@@ -81,7 +81,7 @@ public class BookListFragment extends Fragment {
         return listView;
     }
 
-    public void updateBooksDisplay(ArrayList<Book> books) {
+    void updateBooksDisplay(ArrayList<Book> books) {
         this.books.clear();
         this.books.addAll(books);
         ((BaseAdapter) listView.getAdapter()).notifyDataSetChanged();

@@ -20,12 +20,12 @@ public class BookDetailsFragment extends Fragment {
     private static final String BOOK_KEY = "book";
     private Book book;
 
-    TextView titleTextView, authorTextView;
-    ImageView coverImageView;
+    private TextView titleTextView, authorTextView;
+    private ImageView coverImageView;
 
     public BookDetailsFragment() {}
 
-    public static BookDetailsFragment newInstance(Book book) {
+    static BookDetailsFragment newInstance(Book book) {
         BookDetailsFragment fragment = new BookDetailsFragment();
         Bundle args = new Bundle();
 
@@ -70,7 +70,7 @@ public class BookDetailsFragment extends Fragment {
     This method is used both internally and externally (from the activity)
     to display a book
      */
-    public void displayBook(Book book) {
+    void displayBook(Book book) {
         titleTextView.setText(book.getTitle());
         authorTextView.setText(book.getAuthor());
         // Picasso simplifies image loading from the web.

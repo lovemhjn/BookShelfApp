@@ -9,22 +9,22 @@ so that a book can be saved inside a bundle object
  */
 public class Book implements Parcelable {
 
-    public final static String JSON_ID = "book_id";
-    public final static String JSON_TITLE = "title";
-    public final static String JSON_AUTHOR = "author";
-    public final static String JSON_COVER_URL = "cover_url";
+    final static String JSON_ID = "book_id";
+    final static String JSON_TITLE = "title";
+    final static String JSON_AUTHOR = "author";
+    final static String JSON_COVER_URL = "cover_url";
 
     private int id;
     private String title, author, coverUrl;
 
-    public Book(int id, String title, String author, String coverUrl) {
+    Book(int id, String title, String author, String coverUrl) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.coverUrl = coverUrl;
     }
 
-    protected Book(Parcel in) {
+    private Book(Parcel in) {
         id = in.readInt();
         title = in.readString();
         author = in.readString();
@@ -51,7 +51,7 @@ public class Book implements Parcelable {
         this.id = id;
     }
 
-    public String getTitle() {
+    String getTitle() {
         return title;
     }
 
@@ -59,7 +59,7 @@ public class Book implements Parcelable {
         this.title = title;
     }
 
-    public String getAuthor() {
+    String getAuthor() {
         return author;
     }
 
@@ -67,7 +67,7 @@ public class Book implements Parcelable {
         this.author = author;
     }
 
-    public String getCoverUrl() {
+    String getCoverUrl() {
         return coverUrl;
     }
 
