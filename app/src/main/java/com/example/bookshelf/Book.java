@@ -13,15 +13,17 @@ public class Book implements Parcelable {
     final static String JSON_TITLE = "title";
     final static String JSON_AUTHOR = "author";
     final static String JSON_COVER_URL = "cover_url";
+    final static String JSON_DURATION = "duration";
 
     private int id;
-    private String title, author, coverUrl;
+    private String title, author, coverUrl,duration;
 
-    Book(int id, String title, String author, String coverUrl) {
+    Book(int id, String title, String author, String coverUrl, String duration) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.coverUrl = coverUrl;
+        this.duration = duration;
     }
 
     private Book(Parcel in) {
@@ -29,6 +31,7 @@ public class Book implements Parcelable {
         title = in.readString();
         author = in.readString();
         coverUrl = in.readString();
+        duration = in.readString();
     }
 
     public static final Creator<Book> CREATOR = new Creator<Book>() {
@@ -75,6 +78,14 @@ public class Book implements Parcelable {
         this.coverUrl = coverUrl;
     }
 
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -86,5 +97,6 @@ public class Book implements Parcelable {
         dest.writeString(title);
         dest.writeString(author);
         dest.writeString(coverUrl);
+        dest.writeString(duration);
     }
 }
